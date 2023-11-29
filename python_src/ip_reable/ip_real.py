@@ -39,5 +39,5 @@ if __name__ == '__main__':
     if os.path.exists('./work'):
         os.mkdir('./work')
     with open('./work') as f:
-        for ip in ip_list:
+        for ip in re_ip_list:
             f.write(f'{ip}\n')
