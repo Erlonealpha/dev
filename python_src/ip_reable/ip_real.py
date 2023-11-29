@@ -36,8 +36,9 @@ if __name__ == '__main__':
     ip_list =[f'172.{tr}.{x}.{y}' for x in range(1,256) for y in range(1,256)]
 
     main_ping()
-    if os.path.exists('./work'):
+    print(re_ip_list)
+    if not os.path.exists('./work'):
         os.mkdir('./work')
-    with open('./work') as f:
+    with open('./work', 'w') as f:
         for ip in re_ip_list:
             f.write(f'{ip}\n')
