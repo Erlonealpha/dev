@@ -15,6 +15,8 @@ def ping_ip(ip):
     if sec:
         re_ip_list.append(ip)
         print(f'{ip} is reabled, time: {sec}')
+        if sec >= 0.01:
+            sec_list.append(sec)
     else:
         ip_ =int(ip.split('.')[3])
         if ip_ % 20 == 0:
@@ -34,7 +36,7 @@ if __name__ == '__main__':
     re_ip_list = []
     content_dict = {}
     ip_list =[f'172.{tr}.{x}.{y}' for x in range(1,256) for y in range(1,256)]
-
+    sec_list = []
     main_ping()
     print(re_ip_list)
     if not os.path.exists('./work'):
