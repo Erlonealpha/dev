@@ -13,7 +13,7 @@ def respone_(ip):
 def ping_ip(ip):
     sec = ping(ip, timeout=0.05)
     if sec:
-        ip_list.append(ip)
+        re_ip_list.append(ip)
         print(f'{ip} is reabled, time: {sec}')
     else:
         ip_ =int(ip.split('.')[3])
